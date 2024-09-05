@@ -1,7 +1,7 @@
 const express = require('express');
 
 const app =express();
-app.get('/'function, (requete,response){
+app.get('/', function (requete,response){
     console.log("Requête reçue");
     response.send ("Hello World : midlleware");
 

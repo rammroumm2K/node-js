@@ -1,0 +1,285 @@
+body {
+    background-color: white;
+    margin: 0;
+    padding: 0;
+}
+
+/* Zone globale */
+#global {
+	width:1280px;
+	margin: 0px auto;       /* pour centrer la zone globale dans le navigateur */
+}
+
+/* Bannière/Logo */
+header {
+    background-image: url(../img/banniere.jpg);
+    background-repeat: no-repeat;
+    width: 1280px;
+    height: 520px;
+    border-radius: 10px;
+}
+
+header h1 {
+    text-align: center;
+    line-height: 80px;      /* interligne, mais ici utilisé pour centrer verticalement le texte */
+    height: 80px;
+    width:300px;
+    border-radius: 30px;
+    background-color: beige;
+    position: absolute;
+    top: 220px;
+    left: calc(50% - 150px);    
+    /* calc(...) permet au navigateur de faire un calcul à partir de l'expression entre parenthèses
+       50% c'est la moitié de la largeur de la fenetre actuelle
+       -150px c'est pour décompter la moitié de mon bloc h1 qui a 300px de large */
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;  /* pour passer tout le texte en majuscule */
+    opacity: 75%;           
+}
+
+/* Menu */
+#menu {
+	width:1280px;
+	height:50px;
+    margin: 10px 0;
+    position: sticky;
+    top:0px;
+}
+
+#menu ul {
+    border-radius: 10px;
+    border: 2px solid black;
+    height: 50px;
+    background-color:#CCC;
+    padding :0px 75px;
+    margin: 0;
+}
+
+#menu li {
+	list-style-type:none;           /* pour éliminer les "bullet" les puces */
+	list-style-position:inside;
+    /* solution alternative */
+    /* display: inline-block; */
+}
+
+#menu a {
+    /* solution alternative */
+    /* enlever le float mais laisser le display:block */
+	float:left;
+	display:block;
+	text-decoration: none;          /* enlever le souligné des liens */
+	text-align:center;
+	width:160px;
+    /* solution alternative */
+    /* réduire un peu la largeur pour que tous les éléments s'alignent */
+	height:50px;
+	line-height:50px;
+	background-color:#CCC;
+	color: black;
+	font-family: Arial,sans-serif;
+	font-weight: bold;
+	font-size:1em;
+}
+
+#menu a:hover {
+	background-color:#A90331;
+    color: white;
+}
+
+/*Contenu */
+main {
+	width:1280px;
+	text-align:justify;
+	background-color:lightgrey;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+
+main p, main ul, main h2, main h3 {
+    margin: 20px 30px;
+	font-size:20px;
+}
+
+table p {
+	text-align:center;
+	font-weight:bold;
+}
+
+main h1 {
+	margin:0px;
+	background-color:#A90331;
+	font-family: Arial,sans-serif;
+	font-style:italic;
+	font-size:24px;
+	color:white;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-radius: 10px 10px 0px 0px;
+}
+
+.entete {
+    text-align: center;
+}
+
+.entete a {
+    text-decoration: none;
+    color: black;
+}
+
+.sommaire, .liens {
+	list-style-type:none;
+	padding:0;
+    text-align: center;
+}
+
+.sommaire a, .liens a {
+	text-decoration:none;       /* faire disparaître le souligné des liens */
+	color:#A90331;
+}
+
+.sommaire a:hover, .liens a:hover {
+	text-decoration:underline;  /* faire apparaître le souligné des liens */
+	color:black;
+}
+
+.retour_top {
+    text-align: left;       /* pour aligner à gauche le texte dans ce bloc */
+    line-height: 60px;
+    width:300px;
+    height: 60px;
+    margin-left: 950px;     /* pour repousser vers la droite tout le bloc */
+}
+
+.retour_top a {
+    text-decoration: none;
+    color: transparent;         /* pour masquer le texte quand le picto n'est pas survolé */
+    text-align: left;
+    display: block;
+    width:300px;
+    height: 60px;
+    background-image: url(../img/back-to-top-icon.png);
+    background-repeat: no-repeat;       /* afficher une seule fois le picto */
+    background-position: right;         /* mettre le picto à droite */
+
+    transition: color 500ms;        /* la transition va durer 500ms et affectera la couleur du texte qui donc changera progressivement du transparent vers le noir */
+}
+
+.retour_top a:hover {
+    color:black;        /* le texte apparaît quand on survole */
+}
+
+#sousmenu a {
+    text-decoration: none;
+    color: black;
+}
+
+#sousmenu a:hover {
+    text-decoration: underline;
+}
+
+/* ================ CSS pour la galerie avec tableau HTML ============== */
+/*
+.galerie {
+    width: 90%;
+    margin: 20px auto;
+}
+
+.galerie tr {
+    vertical-align: top;
+}
+
+.galerie img {
+    border: 2px solid black;
+    padding: 5px;
+    max-height: 350px;
+}
+
+.galerie figcaption {
+    text-align: center;
+    font-size: 18px;
+}
+*/
+
+/* ================== CSS pour la galerie avec Grid Layout ========= */
+
+/* 1. définir le conteneur (parent) dans la grille */
+.galerie {
+    display: grid;
+    /* 3. définir le nombre de rangées (row) et de colonnes (column) */
+    grid-template-columns: 1fr 1fr 1fr;
+    width: 90%;
+    margin: 20px auto;
+    grid-template-areas: 
+    "photo3  photo2  photo1"
+    ".       .       .";
+}
+
+/* 2. les enfants sont les balises directement à l'intérieur du parent */
+/* ici, ce sont donc les balises <figure> */
+
+.galerie img {
+    border: 2px solid black;
+    padding: 5px;
+    max-height: 350px;
+    width:100%;
+}
+
+.galerie figcaption {
+    text-align: center;
+    font-size: 18px;
+}
+
+#photo1 {
+    grid-area: photo1;
+}
+
+#photo3 {
+    grid-area: photo3;
+}
+
+/* =========== Formulaire de contact ============ */
+.contact {
+    width: 620px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.contact div label {
+    display: inline-block;
+    height: 30px;
+    line-height: 30px;
+    width: 200px;
+    text-align: right;
+}
+
+.contact input {
+    height: 30px;
+    width: 400px;
+    margin-bottom: 5px;
+}
+
+.contact textarea {
+    height: 80px;
+    width: 400px;
+    resize: none;       /* pour empêcher le redimensionnement du textarea */
+}
+
+/* pour cibler le label dont l'attribut for vaut "frm1_message" */
+.contact label[for="frm1_message"] {
+    float: left;
+}
+
+.contact input[type="submit"] {
+    height: 50px;
+    width: 300px;
+    margin-top: 30px;
+    margin-left: 200px;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+.liens {
+    column-count: 3;    /* pour afficher sur 3 colonnes */
+}
