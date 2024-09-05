@@ -1,0 +1,1 @@
+console.log("Bienvenue dans le mode de Node.JS");
