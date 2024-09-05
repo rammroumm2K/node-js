@@ -1,0 +1,21 @@
+{
+  "name": "middleware2",
+  "version": "1.0.0",
+  "description": "Demo sur le framework Express avec les templates EJS et les Middlewares",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon index.js"
+
+  },
+  "author": "Guillaume Baillieux",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^4.19.2",
+    "morgan": "^1.10.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.4"
+  }
+}
