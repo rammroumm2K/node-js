@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <title>Traitement du formulaire</title>
+</head>
+<body>
+        <h1>Traitement du formulaire</h1>
+        <h3><%=titre%></h3>
+        <p>Bonjour, <%= nom %></p>
+        <p>Nous avons bien reçu votre message, merci ! (<strong><%=msg %></strong>)</p>
+        
+        <br>
+        <p>Prenom : <%= prenom  %></p>
+        <p>Email : <%= email  %></p>
+        <p>Ville : <%= ville %></p>
+
+        <p><a href="/">Retour à l'accueil</a></p>
+        <p><a href="/contact">Envoyer un autre message</a></p>
+
+    
+</body>
+</html>
