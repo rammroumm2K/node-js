@@ -1,5 +1,5 @@
 //imorter le module mysql
-const mysql = require("myqls");
+const mysql = require("mysql");
 
 const dbConfig = require("../config/dbconfig.js");
 
